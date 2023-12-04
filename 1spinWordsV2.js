@@ -8,7 +8,7 @@ function spinWords(string){
   for (var i = 0; i < targetArray.length; i++) {
     if (targetArray[i].length < 5){
       // save the word to result
-      endString = endString + targetArray[i] + ' '
+      endString = [endString, targetArray[i]].join(' ')
     } else {
       endString = endString + targetArray[i].split('').reverse().join('') + ' '
     }
