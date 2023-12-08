@@ -17,7 +17,7 @@
 
 def duplicate_encode(word):
     myResult =''
-    print(word.lower())
+#    print(word.lower())
     for myCharacter in word.lower():
         if word.lower().count(myCharacter) > 1:
             myResult += ')'
