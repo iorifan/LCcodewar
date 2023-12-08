@@ -42,7 +42,7 @@ function isPrime(num) {
   
 }
 
-// correct answer where the limit is simply a sqrt to avoid detecting 2 scenario
+// one of the correct answers where the limit is simply a sqrt to avoid detecting 2 scenario
 
 function isPrime(num) {
   if (num < 2) return false;
