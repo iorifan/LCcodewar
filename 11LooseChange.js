@@ -17,8 +17,8 @@ loose_change(4.935) ==>  {'Nickels': 0, 'Pennies': 4, 'Dimes': 0, 'Quarters': 0}
 */
 
 
-function findQuarter(obj, num) {
-
+function findQuarter(myObj, num) {
+    myObject.Quarters = Math.floor(Math.floor(num) / 25)
 }
 
 function looseChange(cents){
@@ -33,11 +33,9 @@ function looseChange(cents){
         return myObject
     } else if (Math.floor(cents) / 25 >= 1) {
         // assigning Quarters
-        myObject.Quarters = Math.floor(Math.floor(cents) / 25)
+
 
     }
-
-
 
   }
 
