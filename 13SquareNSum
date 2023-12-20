@@ -1,0 +1,12 @@
+
+# a good example on the power of operator **
+def square_sum(numbers):
+    return sum(x ** 2 for x in numbers)
+
+# my solution
+def square_sum(numbers):
+    #your code here
+    mySum = 0
+    for i in numbers:
+        mySum += i*i
+    return mySum
