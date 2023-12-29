@@ -11,9 +11,28 @@
 
 def descending_order(num):
     myNum = []
-    for i in num:
+    #myNum.append(str(num)[0])
+    #print(myNum)
+    #print(str(num)[0])
+    counterI = 0
+    counterJ = 0
+    for i in str(num):
         if len(myNum) < 1:
             myNum.append(i)
-        else 
-        
-    # Bust a move right here
+        else:
+            for j in myNum:
+                if i > j:
+        #            print("J is " + j)
+        #            print(myNum)
+                    myNum.insert(counterJ, i)
+                    break
+                else:
+                    myNum.append(i)
+                    break
+        #            counterJ += 1
+    #    counterI += 1
+    return myNum
+
+#now, the question is how to compare?
+       
+print(descending_order(42145))
