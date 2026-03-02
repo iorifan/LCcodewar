@@ -1,0 +1,25 @@
+-- # write your SQL statement here: 
+-- you are given a table 'counter' with columns 'x' (int) and 'n' (int)
+-- return a query with columns 'x', 'n' and your result in a column named 'res' (array)
+-- sort results by column 'x' ascending, then by 'n' ascending
+-- note that each pair of 'x' and 'n' in 'counter' is unique 
+--
+-- Create a function with two arguments that will return an array of the first n multiples 
+-- of x.
+-- Assume both the given number and the number of times to count will be positive numbers 
+-- greater than 0.
+-- Return the results as an array or list ( depending on language ).
+-- Examples
+-- x = 1, n = 10 --> [1,2,3,4,5,6,7,8,9,10]
+-- x = 2, n = 5  --> [2,4,6,8,10]
+
+SELECT
+  c.x,
+  c.n,
+  ARRAY_AGG(c.x * gs ORDER BY gs) AS res
+FROM counter AS c
+CROSS JOIN LATERAL generate_series(1, c.n) AS gs
+GROUP BY c.x, c.n -- this is de-dup only since even though the sample tests don't have 
+--a duplicated data, the final submission cases wud have a duplicated data or two
+--also, this cross join probably need a group by to have the tables to be joint together
+ORDER BY c.x ASC, c.n ASC;
